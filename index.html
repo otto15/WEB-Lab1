@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>LAB1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="src/js/init.js"></script>
+    <script src="src/js/click.js"></script>
+    <script src="src/js/submit.js"></script>
+    <script src="src/js/validatior.js"></script>
+    <script src="src/js/limiter.js"></script>
+</head>
+<body onload="init()">
+    <h1>Salam</h1>
+    <div class="sender">
+        <form id="form" onsubmit="processSubmit(); return false;">
+            <div id="x_div">
+                <input type="hidden" name="x" id="x_value">
+                <div class="x-buttons"></div>
+                <div class="x-validation-info"></div>
+            </div>
+            <div id="y_div">
+                <input type="text" name="y" id="y_value" oninput="limit_length(event, 10)">
+                <div class="y-validation-info"></div>
+            </div>
+            <div id="r_div">
+                <input type="hidden" name="r" id="r_value">
+                <div class="r-buttons"></div>
+                <div class="r-validation-info"></div>
+            </div>
+            <div class="managing-buttons">
+                <input type="submit" value="Проверить">
+                <input id="reset" type="reset" value="Сбросить" onclick="clean_input()">
+            </div>
+        </form>
+    </div>
+    <div class="info-table">
+        
+    </div>
+</body>
+</html>
