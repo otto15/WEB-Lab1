@@ -18,18 +18,21 @@ function validate(x, y, r) {
     }
 
     if (!(y.trim() === "")) {
-        if (/^(0$|-?[1-9]\d*(\.\d*[1-9]$)?|-?0\.\d*[1-9])$/.test(y)) {
-            if ((parseFloat(y) > -5) && (parseFloat(y) < 5)) {
-                y_validation_success = true;
-            } else y_validation_info_box.innerHTML = "<span>Координата Y задается числом в промежутке (-5..5)!</span>";
-        } else y_validation_info_box.innerHTML = "<span>Координата Y задается числом!</span>";
-    } else y_validation_info_box.innerHTML = "<span>Не введена координата Y!</span>";
+            let y_value = parseFloat(y);
+            if (isNaN(y_value)) {
+                y_validation_info_box.innerHTML = "<span>Координата Y задается числом!</span>";
+            } else {
+                if ((y_value > -5) && (y_value < 5)) {
+                    y_validation_success = true;
+                } else y_validation_info_box.innerHTML = "<span>Координата Y задается числом в промежутке (-5..5)!</span>";
+            }
+        } else y_validation_info_box.innerHTML = "<span>Не введена координата Y!</span>";
 
     if (r === undefined || r === "") {
-        r_validation_info_box.innerHTML = "<span>Не выбрано значение X!</span>";
+        r_validation_info_box.innerHTML = "<span>Не выбрано значение R!</span>";
     } else {
         r_validation_success = true;
     }
 
-    return x_validation_success && y_validation_info_box && r_validation_success;
+    return x_validation_success && y_validation_success && r_validation_success;
 }

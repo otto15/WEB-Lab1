@@ -9,6 +9,9 @@ var rRange = range(1, 6);
 function init() {
     printBtns(xRange, ".x-buttons", "x-dot", "\"x_value\"");
     printBtns(rRange, ".r-buttons", "r-size", "\"r_value\"");
+
+    var existing = localStorage.getItem('table');
+    $('.info-table tbody').append(existing ? existing : "");
 }
 
 function printBtns(btnsAr, parent, className, targetClass) {
@@ -19,7 +22,7 @@ function printBtns(btnsAr, parent, className, targetClass) {
         var buttons = $(parent);
         btn.classList.add(className);
         btn.id = className + i;
-        btn.setAttribute("onclick", "btnClick("+ targetClass + ", " + btn.value +")");
+        btn.setAttribute("onclick", "btnClick(" + targetClass + ", " + btn.value + ", \"" + btn.id + "\")");
         buttons.append(btn);
     }
 }
