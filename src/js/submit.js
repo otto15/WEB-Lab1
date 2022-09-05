@@ -5,7 +5,7 @@ function processSubmit() {
     if (validate(x_value, y_value, r_value)) {
         $.ajax({
             type: "POST",
-            url: "../src/php/index.php",
+            url: "src/php/index.php",
             async: false,
             data: {"x": parseInt(x_value.trim()), "y": parseFloat(y_value.trim()), "r": parseInt(r_value.trim())},
             success: function(response) {
