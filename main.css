@@ -1,3 +1,8 @@
+body {
+    font-family: monospace;
+    font-size: 1.0rem;
+}
+
 header {
     padding: 15px 25px;
     display: flex;
@@ -16,11 +21,6 @@ header {
 
 .variant {
     text-align: right;
-}
-
-body {
-    font-family: monospace;
-    font-size: 1.0rem;
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {

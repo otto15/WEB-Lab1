@@ -1,7 +1,4 @@
 function clean_input() {
-    // const field = $('#x_value');
-    // $('#x' + field.val()).removeClass('selected');
-    // field.val("");
     $('#x_value').val(undefined);
     $('#y_value').val("");
     $('#r_value').val(undefined);

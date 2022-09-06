@@ -18,7 +18,7 @@ function validate(x, y, r) {
     }
 
     if (!(y.trim() === "")) {
-            let y_value = parseFloat(y);
+            let y_value = Number(y);
             if (isNaN(y_value)) {
                 y_validation_info_box.innerHTML = "<span>Координата Y задается числом!</span>";
             } else {

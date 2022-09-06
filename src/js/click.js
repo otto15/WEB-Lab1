@@ -1,15 +1,15 @@
-function btnClick(targetId, val, id) {
-    let el = document.getElementById(id);
-    let parent = el.parentElement;
-    for (const child of parent.children) {
+function btnClick(event) {
+    let el = event.target;
+    for (const child of $(this).parent().children()) {
         if (child.classList.contains("selected")) {
             child.classList.remove("selected");
             if (child === el) {
-                document.getElementById(targetId).value = "";
+                document.getElementById(el.getAttribute("target")).value = "";
                 return;
             }
         }
     }
-    document.getElementById(targetId).value = val;
+
+    document.getElementById(el.getAttribute("target")).setAttribute("value", el.value);
     el.classList.add("selected");
 }
