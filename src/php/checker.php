@@ -25,7 +25,7 @@ class HitChecker
         return $x <= 0 && $y <= 0 && (pow($x, 2) + pow($y, 2) <= pow($r * self::$RAD, 2));
     }
 
-    private function check_if_in_rectangle($x, $y, $r) {
+    private function check_vif_in_rectangle($x, $y, $r) {
         return $x >= self::$REC_A1 * $r && $x <= self::$REC_A2 * $r && $y >= self::$REC_B2 * $r && $y <= self::$REC_B1 * $r;
     }
 }

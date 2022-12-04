@@ -9,6 +9,18 @@ $response = [];
 
 session_start();
 
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    if(!isset($_SESSION['table'])) {
+        $_SESSION['table'] = '';
+    }
+
+    $_SESSION['table'] = '';
+
+    $response = $_SESSION['table'];
+
+    exit($response);
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if(!isset($_SESSION['table'])) {
         $_SESSION['table'] = '';

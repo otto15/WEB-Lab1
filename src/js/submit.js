@@ -17,7 +17,7 @@ function processSubmit() {
 
             },
             error: function(data) { 
-                alert(data);
+                alert(JSON.stringify(data));
             }
         });
     }
